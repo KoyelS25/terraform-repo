@@ -5,7 +5,7 @@ provider "aws" {
   secret_key = "Ivk3EyACdyHLypz4pyqtHbnTm/Eage1Bma8tOlA3"
   }
 
-resource "aws_s3_bucket" "terra-bucket-koyel" {
+resource "aws_s3_bucket" "koyel" {
   bucket = "test-terraform"
   acl = "private"
 
