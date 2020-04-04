@@ -5,15 +5,6 @@ provider "aws" {
   secret_key = "TZTYJJGGs4McbrLqp+x3NAQVZjpZkE1jvQ9YBZ60"
   }
 
-resource "aws_s3_bucket" "koyel" {
-  bucket = "sumana"
-  acl = "private"
-
-
-  versioning {
-    enabled = true
-  }
-  }
 resource "aws_iam_role_policy" "ec2_policy" {
   name = "ec2_policy"
   role = "aws_iam_role.terraform_ec2_role.id"
