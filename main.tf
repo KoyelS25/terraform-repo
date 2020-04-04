@@ -1,8 +1,8 @@
 provider "aws" {
 
   region = "ap-south-1"
-  access_key = "AKIAXKIZZIZ72UMEDO7R"
-  secret_key = "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"
+  access_key = "AKIAXKIZZIZ7UJNURRGC"
+  secret_key = "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"
   }
 
 resource "aws_s3_bucket" "koyel" {
