@@ -18,7 +18,7 @@ resource "aws_iam_role_policy" "ec2_policy" {
   name = "ec2_policy"
   role = "aws_iam_role.terraform_ec2_role.id"
 
-  policy = "${file("ec2-policy.json")}"
+  policy = "${file("ec2_policy.json")}"
 }
 
 resource "aws_iam_role" "terraform_ec2_role" {
