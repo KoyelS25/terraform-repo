@@ -6,7 +6,7 @@ provider "aws" {
   }
 
 resource "aws_iam_role_policy" "ec2_policy" {
-  name = "ec2_policy"
+  name = "ec2_policy_first"
   role = "aws_iam_role.terraform_ec2_role.id"
 
   policy = <<EOF
