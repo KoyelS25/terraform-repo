@@ -14,10 +14,20 @@ resource "aws_iam_role_policy" "ec2_policy" {
 
 resource "aws_iam_role" "terraform_ec2_role" {
     name = "ec2_policy_role"
-    assume_role_policy = "${file("ec2_assume_policy.json")}"
-}
+    assume_role_policy = <<EOF
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": "sts:AssumeRole",
+            "Principal": {
+                "Service": "ec2.amazonaws.com"
+            },
 
-resource "aws_iam_instance_profile" "ec2_profile" {
-    name = "ec2_policy_profile"
-    role = "aws_iam_role.role.name"
+            "Effect": "Allow",
+            "Sid": ""
+        }
+    ]
+}
+EOF
 }
