@@ -23,7 +23,7 @@ resource "aws_iam_role_policy" "ec2_policy" {
 
 resource "aws_iam_role" "terraform_ec2_role" {
     name = "ec2_policy_role"
-    assume_role_policy = "${file("ec2-assume_policy.json")}"
+    assume_role_policy = "${file("ec2_assume_policy.json")}"
 }
 
 resource "aws_iam_instance_profile" "ec2_profile" {
