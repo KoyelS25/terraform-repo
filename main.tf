@@ -28,5 +28,5 @@ resource "aws_iam_role" "terraform_ec2_role" {
 
 resource "aws_iam_instance_profile" "ec2_profile" {
     name = "ec2_policy_profile"
-    role = "${aws_iam_role.role.name)}"
+    role = "aws_iam_role.role.name"
 }
