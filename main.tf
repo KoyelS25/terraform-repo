@@ -6,7 +6,7 @@ provider "aws" {
   }
 
 resource "aws_s3_bucket" "koyel" {
-  bucket = "test-terraform"
+  bucket = "sumana"
   acl = "private"
 
 
