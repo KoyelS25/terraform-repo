@@ -5,7 +5,7 @@ resource "aws_cloudtrail" "ct_log" {
   include_global_service_events = false
 }
 
-  policy = <<EOF
+  assume_role_policy = <<EOF
 {
     "Version": "2012-10-17",
     "Statement": [
