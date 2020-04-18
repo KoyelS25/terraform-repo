@@ -1,3 +1,5 @@
+data "aws_caller_identity" "current" {}
+
 resource "aws_cloudtrail" "ct_log" {
   name                          = "tf-trail-foobar"
   s3_bucket_name                = "terra-cloudtrail"
