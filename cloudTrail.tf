@@ -5,7 +5,7 @@ resource "aws_cloudtrail" "ct_log" {
   include_global_service_events = false
 }
 
-  policy = <<POLICY
+  policy = <<EOF
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -34,5 +34,5 @@ resource "aws_cloudtrail" "ct_log" {
         }
     ]
 }
-POLICY
+EOF
 }
