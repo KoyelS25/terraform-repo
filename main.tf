@@ -8,9 +8,6 @@ resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
 }
 
-resource "aws_sns_topic" "user_updates" {
-  name = "user-updates-topic"
-}
 
 resource "aws_sqs_queue" "terraform_queue" {
   name                      = "terraform-example-queue"
