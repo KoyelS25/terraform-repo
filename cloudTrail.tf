@@ -1,7 +1,7 @@
 data "aws_caller_identity" "current" {}
 
 resource "aws_cloudtrail" "foobar" {
-  name                          = "tf-trail-foobar"
+  name                          = "tf-trail"
   s3_bucket_name                = "marveldc"
   s3_key_prefix                 = "prefix"
 }
