@@ -22,3 +22,11 @@ resource "aws_sqs_queue" "terraform_queue" {
     Environment = "production"
   }
 }
+resource "aws_subnet" "main" {
+  vpc_id     = "vpc-0e3616a4c61601122"
+  cidr_block = "10.0.1.0/24"
+
+  tags = {
+    Name = "Main"
+  }
+}
