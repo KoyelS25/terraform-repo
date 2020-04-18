@@ -1,5 +1,5 @@
-resource "aws_s3_bucket" "paint_bucket" {
-  bucket = "my-tf-bucket"
+resource "aws_s3_bucket" "bucky_bucket" {
+  bucket = "my-tf-hs-bucket"
   acl    = "private"
 
   tags = {
