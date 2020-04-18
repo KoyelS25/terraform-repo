@@ -1,6 +1,6 @@
 variable "Secret_Access_key" {
-  type = Any
+  type = any
 }
 variable "Access_Key_ID" {
-  type = Any
+  type = any
 }
