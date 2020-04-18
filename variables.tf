@@ -4,3 +4,6 @@ variable "Secret_Access_key" {
 variable "Access_Key_ID" {
   type = any
 }
+variable "region_name" {
+  type = any
+}
