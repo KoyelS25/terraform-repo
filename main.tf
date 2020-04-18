@@ -1,7 +1,9 @@
-resource "aws_kms_key" "a" {}
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.0/16"
+}
 
-resource "aws_iam_role" "a" {
-  name = "iam-role-for-grant"
+resource "aws_iam_role" "terra_role" {
+  name = "terra_role"
 
   assume_role_policy = <<EOF
 {
@@ -10,7 +12,7 @@ resource "aws_iam_role" "a" {
     {
       "Action": "sts:AssumeRole",
       "Principal": {
-        "Service": "lambda.amazonaws.com"
+        "Service": "ec2.amazonaws.com"
       },
       "Effect": "Allow",
       "Sid": ""
@@ -18,17 +20,8 @@ resource "aws_iam_role" "a" {
   ]
 }
 EOF
-}
 
-resource "aws_kms_grant" "a" {
-  name              = "my-grant"
-  key_id            = "${aws_kms_key.a.key_id}"
-  grantee_principal = "${aws_iam_role.a.arn}"
-  operations        = ["Encrypt", "Decrypt", "GenerateDataKey"]
-
-  constraints {
-    encryption_context_equals = {
-      Department = "Finance"
-    }
+  tags = {
+    tag-key = "tag-value"
   }
 }
